@@ -1,0 +1,15 @@
+<!-- MAIN WRAPPER -->
+
+<div class='main-wrapper'>
+  <div class="menu">
+    <div class='menu-item'>
+      <a class='menu-item-title' href={% url 'index' %} >WSZYTSKIE KATEGORIE</a>
+      </div>
+    {% for cat in categories %}
+      <a class='menu-item' href={% url 'categories'  cat.id %}>
+        <div class='menu-item-title'>{{cat.name}}</div>
+        <div class='menu-item-number'>13</div>
+      </a>
+    {% endfor %}
+
+  </div>

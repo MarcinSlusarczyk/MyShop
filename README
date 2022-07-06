@@ -1,0 +1,74 @@
+Zakładanie aplikacji w django:
+
+1. utworz nowy projekt: django-admin startproject Shop
+2. przejdź do katalogu głębiej: cd Shop
+3. utwórz nową aplikację: python manage.py startapp Products
+4. generuje baze danych: python manage.py makemigrations
+5. akceptuje migrację: python manage.py migrate
+6. w nowo utworzonym pliku models.py tworzymy niezbędne pola na podstawie których będzie generowała sie baza danych
+7. Tworzę super usera do panelu administracyjnego: python manage.py createsuperuser
+8. aktywuje aplikację: python manage.py runserver
+
+9. dodaje niezbędne pola do pliku models.py:
+        class Products(models.Model):
+                title = models.CharField(max_length=200)
+                description = models.TextField
+                price = models.DecimalField(max_digits=12, decimal_places=2)
+
+                # wyswietlanie nazw produktów (bez tego nazwy objektów)
+                def __str__(self):
+                    return self.title
+
+10. Dodaje do pliku admin.py nowe pole (żeby było widoczne w panelu administracyjnym):
+        from .models import Product
+        admin.site.register(Product)
+
+11. W settings.py dodaje w sekcji INSTALLED_APPS aplikacje:
+        ,'Product'
+
+12. generuje baze danych: python manage.py makemigrations
+
+13. akceptuje migrację: python manage.py migrate i aktywuje apke: python manage.py runserver
+
+14 w views.py dodaje templates i zwracam elementy na strone:
+
+        from django.http import HttpResponse
+        from .models import Product
+
+        def index(requests):
+            return HttpResponse(Product.objects.all())
+
+15. w pliku urls.py dodać linijke: path('', views.index, name='index')
+
+16. dodaje folder templates i zapisuje w nim html'e:
+
+17. w settings.py trzeba dodać lokalizacje dla templates -> sekcja TEMPLATES i tam dopisać 'DIRS': ['Templates']
+
+18 w views.py wywoływać pliki html metodą: return render(request, 'main.html')
+
+19 dodaje formatowania css dla templates folder static/css/style.css
+
+20. dodaje lokalizacje dla static plikóww w settings.py:
+
+        import os
+
+        STATICFILES_DIRS = (
+            os.path.join(BASE_DIR, 'static'),
+        )
+
+21. style.css podłączam pod htmle metodą:
+{% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+22. Łącze bloku kodu html i css,em formatuje
+23. Podlinkowuje w htmlu sciezke np.  <a class='menu-item' href={% url 'categories'  cat.id %}>
+24. w urls.py definiuje pathy: np.  path('categories/<id>/', views.categories, name='categories')
+25. w views.py tworzę funkcje, categories, która koresponduje z pathami w pliku urls.py
+
+
+
+
+
+
+
+

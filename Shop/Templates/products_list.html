@@ -1,0 +1,27 @@
+<div class='products-container'>
+  {% for product in products %}
+    <div class='shop-card'>
+      <div class="title">
+        {{product.title}}
+      </div>
+      <div class="w">{{categories.name}}</div>
+      <div class="desc">{{product.description}}</div>
+      <div class="product">
+         <img src="https://dstreet.pl/pol_pl_Spodnie-meskie-dresowe-antracytowe-Dstreet-UX3244-35667_1.webp" />
+      </div>
+        <div class="status">DOSTĘPNOŚĆ: {{product.amount}}</div>
+      <div class='cta'>
+        <div class="price">{{product.price}} PLN</div>
+        <button class="button">Zamów</button>
+      </div>
+    </div>
+  {% endfor %}
+  </div>
+</div>
+
+<div class='modal'>
+  <div>asdasdas asd as </div>
+  <div>asdasdas asd as </div>
+  <div>asdasdas asd as </div>
+  <div>asdasdas asd as </div>
+</div>
