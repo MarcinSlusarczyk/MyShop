@@ -78,7 +78,7 @@ DEPLOY HQ:
     a. SECRET_KEY = os.getenv('SECRET_KEY')
     b. ALLOWED_HOSTS = ['slusarczyk.herokuapp.com', '127.0.0.1']
     c. MIDDLEWARE = [
-        'django.middleware.security.SecurityMiddleware'
+        'whitenoise.middleware.WhiteNoiseMiddleware',
         ...
         ...
     d.TEMPLATES= 'DIRS': [os.path.join(BASE_DIR, "templates")],
