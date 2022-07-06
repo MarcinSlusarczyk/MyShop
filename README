@@ -67,8 +67,29 @@ Zakładanie aplikacji w django:
 
 
 
+DEPLOY HQ:
 
+1. utworzyć plik Procfile i dopisać:   web: gunicorn --pythonpath Shop Shop.wsgi --log-file -
+2. doinstalować pip install whitenoise
+3. wygenerować pip freeze > requirements.txt
+4. utworzyć projekt w HQ
+5. w pliku settings.py zmienić:
 
+    a. SECRET_KEY = os.getenv('SECRET_KEY')
+    b. ALLOWED_HOSTS = ['slusarczyk.herokuapp.com', '127.0.0.1']
+    c. MIDDLEWARE = [
+        'django.middleware.security.SecurityMiddleware'
+        ...
+        ...
+    d.TEMPLATES= 'DIRS': [os.path.join(BASE_DIR, "templates")],
+
+    e.STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+      STATIC_URL = '/static/'
+
+      STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'static'),
+            )
 
 
 
