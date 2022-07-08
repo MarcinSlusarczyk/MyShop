@@ -1,24 +1,27 @@
-<!-- NAVBAR -->
-<div class='navbar'>
-  <div class='logo'>SKLEP MARCINA</div>
-  <div class='account-container'>
-    <i class="fa fa-user" aria-hidden="true"></i>
-    <div class='cart-desc'>O Nas</div>
+<div class="topnav" id="myTopnav">
+  <a href="#home" class="active">Moja Strona</a>
+  <a href="#contact">Kontakt</a>
+  <div  class="dropdown">
+    <button  class="dropbtn">Sklep
+      <i  class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="/">WSZYSTKO</a>
+      {% for cat in categories %}
+      <a href={% url 'categories'  cat.id %}>{{cat.name}}</a>
+      {% endfor %}
+    </div>
   </div>
-    <div class='account-container'>
-    <i class="fa fa-user" aria-hidden="true"></i>
-    <div class='cart-desc'>Sklep</div>
-  </div>
-  <div class='account-container'>
-    <i class="fa fa-user" aria-hidden="true"></i>
-    <div class='cart-desc'>Moje Konto</div>
-  </div>
-  <div class='cart-container'>
-    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-    <div class='cart-desc'>0 Produktów</div>
-  </div>
-
+  <a href="#about">O Nas</a>
+  <a href="javascript:void(0);" class="icon" onclick="myFunction()">&#9776;</a>
 </div>
-
-
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}</script>
 
