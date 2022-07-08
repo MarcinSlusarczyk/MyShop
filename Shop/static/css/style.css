@@ -362,22 +362,7 @@ a.preview{
     text-decoration: none;
     font-size: 15px;
     text-shadow: 0 -1px 1px rgba(0, 0, 0, .4);
-
-    background: #286398;
-    background: -webkit-linear-gradient(bottom, #1d4970, #639ed3);
-    background: -ms-linear-gradient(bottom, #286398, #639ed3);
-    background: -moz-linear-gradient(bottom, #286398, #639ed3);
-    background: -o-linear-gradient(bottom, #286398, #639ed3);
-    background-position: 0 -15px;
-    background-size: 400px 80px;
-    background-repeat: no-repeat;
-
-    -webkit-transition: background-position .2s ease-in;
-    -ms-transition: background-position .2s ease-in;
-    -moz-transition: background-position .2s ease-in;
-    -o-transition: background-position .2s ease-in;
-    transition: background-position .2s ease-in;
-    box-shadow: 0 2px 0 #165181;
+    background: green;
 }
 
 
