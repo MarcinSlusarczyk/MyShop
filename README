@@ -42,7 +42,7 @@ Zakładanie aplikacji w django:
 
 16. dodaje folder templates i zapisuje w nim html'e:
 
-17. w settings.py trzeba dodać lokalizacje dla templates -> sekcja TEMPLATES i tam dopisać 'DIRS': ['Templates']
+17. w settings.py trzeba dodać lokalizacje dla templates -> sekcja TEMPLATES i tam dopisać 'DIRS': [os.path.join(BASE_DIR, "templates")]
 
 18 w views.py wywoływać pliki html metodą: return render(request, 'main.html')
 
