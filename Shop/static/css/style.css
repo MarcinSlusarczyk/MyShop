@@ -18,7 +18,7 @@
 
 /* Add an active class to highlight the current page */
 .active {
-  background-color: #04AA6D;
+  background-color: grey;
   color: white;
 }
 
@@ -114,6 +114,7 @@
     width: 100%;
     text-align: left;
   }
+  .active {height: 21.5px;}
 }
 
 
