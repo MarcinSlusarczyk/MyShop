@@ -20,6 +20,7 @@
 .active {
   background-color: grey;
   color: white;
+
 }
 
 /* Hide the link that should open and close the topnav on small screens */
@@ -116,7 +117,7 @@
     width: 100%;
     text-align: left;
   }
-  .active {height: 22px;}
+  .active {height: 24px;}
 }
 
 
