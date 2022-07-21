@@ -91,5 +91,20 @@ DEPLOY HQ:
         os.path.join(BASE_DIR, 'static'),
             )
 
+6. migracja bazy danych na postgresa w pliku settings.py podmienić fragment:
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'name',
+        'USER': 'user',
+        'PASSWORD': 'pass',
+        'HOST': 'host',
+        'PORT':  '5432',
+    }
+}
+
+po podmianie w termialu;  python manage.py migrate oraz przesłąć do githuba
+można utowrzuć nowego superusera: python manage.py createsuperuser
 
 
