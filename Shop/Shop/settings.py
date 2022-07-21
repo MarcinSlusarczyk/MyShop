@@ -88,11 +88,11 @@ WSGI_APPLICATION = 'Shop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'ec2-3-223-169-166.compute-1.amazonaws.com',
+        'NAME': 'd3819am18ofeg2',
         'USER': 'eorgtcydramyuh',
         'PASSWORD': 'd2f31f6077af94471ad5446e386b982dc138bf6f6efcbfff555245c66b5710e3',
         'HOST': 'ec2-3-223-169-166.compute-1.amazonaws.com',
-        'PORT':  '5432'
+        'PORT':  '5432',
     }
 }
 
