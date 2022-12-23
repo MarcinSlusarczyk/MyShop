@@ -108,3 +108,22 @@ po podmianie w termialu;  python manage.py migrate oraz przesłąć do githuba
 można utowrzuć nowego superusera: python manage.py createsuperuser
 
 
+
+
+
+DEPLY APKI NA HEROKU WERSJA FLASK:
+
+Aby zdeployować aplikację w Flasku na Heroku, należy wykonać następujące kroki:
+
+Zarejestruj się na stronie Heroku i zainstaluj narzędzie Heroku CLI.
+1.Utwórz plik requirements.txt zawierający listę wymaganych pakietów Pythona. Możesz to zrobić, wpisując pip freeze > requirements.txt w konsoli.
+2.Utwórz plik Procfile zawierający polecenie uruchamiające aplikację. Polecenie to powinno wyglądać następująco: web: gunicorn nazwa_aplikacji:app, gdzie nazwa_aplikacji to nazwa pliku Python, w którym została utworzona aplikacja w Flasku.
+3.Otwórz konsolę i przejdź do katalogu z aplikacją.
+4.Uruchom polecenie heroku login, aby się zalogować do swojego konta Heroku.
+5.Utwórz nową aplikację na Heroku, wpisując polecenie heroku create nazwa_aplikacji. nazwa_aplikacji to dowolna nazwa, którą chcesz nadać swojej aplikacji.
+6.Wypchnij aplikację do Heroku za pomocą polecenia git push heroku master.
+7.Uruchom aplikację za pomocą polecenia heroku ps:scale web=1.
+
+Teraz powinieneś być w stanie uzyskać dostęp do aplikacji poprzez adres URL, który zostanie wyświetlony po wykonaniu polecenia heroku open. Jeśli chcesz zobaczyć logi aplikacji, możesz użyć polecenia heroku logs.
+
+Uwaga: Upewnij się, że masz plik Procfile i requirements.txt w katalogu głównym aplikacji oraz że masz zainstalowane wymagane pakiety Pythona. Jeśli nie masz jeszcze pliku Procfile, możesz go utworzyć za pomocą polecenia echo web: gunicorn nazwa_aplikacji:app > Procfile.
